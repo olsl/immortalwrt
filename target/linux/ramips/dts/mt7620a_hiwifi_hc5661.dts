@@ -18,6 +18,13 @@
 			label = "blue:system";
 			gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 		};
+          usb {
+			function = LED_FUNCTION_USB;
+			color = <LED_COLOR_ID_BLUE>;
+			gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+			trigger-sources = <&ohci_port1>, <&ehci_port1>;
+			linux,default-trigger = "usbport";
+		};
 
 		internet {
 			label = "blue:internet";
